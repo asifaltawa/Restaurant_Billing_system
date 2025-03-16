@@ -14,7 +14,9 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://restaurant-billing-system-frontend.vercel.app',
+}));
 app.use(express.json());
 
 // MongoDB Connection
