@@ -154,7 +154,7 @@ function PaymentModal({ isOpen, onClose, amount, orderId, onPaymentSuccess }) {
 
       try {
         console.log('Creating payment intent for amount:', amount);
-        const { data } = await axios.post('http://localhost:5000/api/payments/stripe/create', {
+        const { data } = await axios.post('https://restaurant-billing-system-backend.vercel.app/api/payments/stripe/create', {
           amount,
           orderId,
           currency: 'inr' // Set currency to INR for Indian Rupees

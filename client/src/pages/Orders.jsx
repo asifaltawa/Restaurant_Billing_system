@@ -34,7 +34,7 @@ function Orders() {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/orders');
+      const response = await axios.get('https://restaurant-billing-system-backend.vercel.app/api/orders');
       setOrders(response.data);
       setLoading(false);
     } catch (err) {
@@ -45,7 +45,7 @@ function Orders() {
 
   const fetchMenuItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/menu');
+      const response = await axios.get('https://restaurant-billing-system-backend.vercel.app/api/menu');
       setMenuItems(response.data);
     } catch (err) {
       setError('Failed to fetch menu items');
@@ -108,7 +108,7 @@ function Orders() {
         paymentStatus: 'pending'
       };
 
-      await axios.post('http://localhost:5000/api/orders', orderData);
+      await axios.post('https://restaurant-billing-system-backend.vercel.app/api/orders', orderData);
       
       // Reset form
       setNewOrder({
@@ -131,7 +131,7 @@ function Orders() {
 
   const updateOrderStatus = async (orderId, status) => {
     try {
-      await axios.patch(`http://localhost:5000/api/orders/${orderId}/status`, {
+      await axios.patch(`https://restaurant-billing-system-backend.vercel.app/api/orders/${orderId}/status`, {
         status
       });
       fetchOrders();
@@ -142,7 +142,7 @@ function Orders() {
 
   const handlePayment = async (orderId, paymentMethod) => {
     try {
-      await axios.patch(`http://localhost:5000/api/orders/${orderId}/payment`, {
+      await axios.patch(`https://restaurant-billing-system-backend.vercel.app/api/orders/${orderId}/payment`, {
         paymentStatus: 'paid',
         paymentMethod
       });

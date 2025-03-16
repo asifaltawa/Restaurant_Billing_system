@@ -18,7 +18,7 @@ function Menu() {
 
   const fetchMenuItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/menu');
+      const response = await axios.get('https://restaurant-billing-system-backend.vercel.app/api/menu');
       setMenuItems(response.data);
       setLoading(false);
     } catch (err) {
@@ -30,7 +30,7 @@ function Menu() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/menu', newItem);
+      await axios.post('https://restaurant-billing-system-backend.vercel.app/api/menu', newItem);
       setNewItem({
         name: '',
         price: '',
@@ -45,7 +45,7 @@ function Menu() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/menu/${id}`);
+      await axios.delete(`https://restaurant-billing-system-backend.vercel.app/api/menu/${id}`);
       fetchMenuItems();
     } catch (err) {
       setError('Failed to delete menu item');

@@ -17,7 +17,7 @@ function Bills() {
   const fetchOrders = async () => {
     try {
       console.log('Fetching orders...');
-      const response = await axios.get('http://localhost:5000/api/orders');
+      const response = await axios.get('https://restaurant-billing-system-backend.vercel.app/api/orders');
       console.log('Orders received:', response.data);
       setOrders(response.data);
       setLoading(false);
@@ -32,7 +32,7 @@ function Bills() {
     try {
       setPaymentLoading(true);
       console.log('Processing payment...', { orderId, paymentMethod });
-      await axios.patch(`http://localhost:5000/api/orders/${orderId}/payment`, {
+      await axios.patch(`https://restaurant-billing-system-backend.vercel.app/api/orders/${orderId}/payment`, {
         paymentStatus: 'paid',
         paymentMethod
       });
@@ -64,7 +64,7 @@ function Bills() {
     try {
       console.log('Generating bill...', orderId);
       const response = await axios.get(
-        `http://localhost:5000/api/bills/order/${orderId}`,
+        `https://restaurant-billing-system-backend.vercel.app/api/bills/order/${orderId}`,
         {
           responseType: 'blob', // Important for handling PDF
         }
