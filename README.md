@@ -88,8 +88,7 @@ A full-stack restaurant billing system built with the MERN stack (MongoDB, Expre
    ```
 
 8. Access the application:
-   - Frontend: http://localhost:5173
-   - Backend API: http://localhost:5000
+   - Frontend: https://restaurant-billing-system-frontend.vercel.app/
 
 ## API Endpoints
 
