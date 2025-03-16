@@ -131,7 +131,7 @@ function PaymentModal({ isOpen, onClose, amount, orderId, onPaymentSuccess }) {
     const initStripe = async () => {
       try {
         console.log('Initializing Stripe...');
-        const { data } = await axios.get('http://localhost:5000/api/payments/stripe/config');
+        const { data } = await axios.get('https://restaurant-billing-system-backend.vercel.app/api/payments/stripe/config');
         console.log('Stripe config received:', { publishableKey: data.publishableKey?.slice(0, 8) + '...' });
         const stripe = await loadStripe(data.publishableKey);
         console.log('Stripe initialized successfully');
