@@ -9,7 +9,7 @@ import {
 } from '@stripe/react-stripe-js';
 
 // Development environment check
-const isDevelopment = process.env.NODE_ENV === 'development';
+// const isDevelopment = process.env.NODE_ENV === 'development';
 
 // Stripe payment form component
 function StripePaymentForm({ amount, onSuccess, onError }) {
