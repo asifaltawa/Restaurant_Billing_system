@@ -1,0 +1,14 @@
+# Ignore .env file
+.env
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore build and temp directories
+/build
+/dist
+/.next
+/.nuxt
